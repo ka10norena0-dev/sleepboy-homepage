@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <title>Sleep Boy ULTRA IoT Setup Reference - Sleep Boy Project</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            max-width: 750px;
+            margin: 40px auto;
+            padding: 0 20px;
+            color: #2d3748;
+            line-height: 1.7;
+            background-color: #fafafa;
+        }
+        .meta-info {
+            font-size: 14px;
+            color: #718096;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        h1 {
+            font-size: 26px;
+            border-bottom: 2px solid #2d3748;
+            padding-bottom: 12px;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            color: #1a202c;
+        }
+        h2 {
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            color: #1a202c;
+        }
+        .section-block {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            border: 1px solid #e2e8f0;
+        }
+        .warning-block {
+            background-color: #fff8e1;
+            border: 1px solid #f6c94e;
+            border-left: 4px solid #f6ad1e;
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: #744210;
+        }
+        .bullet-title {
+            font-weight: bold;
+            margin-top: 20px;
+            color: #2d3748;
+            border-left: 3px solid #4a5568;
+            padding-left: 8px;
+        }
+        .device-block {
+            background-color: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        p, li {
+            font-size: 15px;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+        ol li, ul li {
+            margin-bottom: 10px;
+        }
+        code {
+            background-color: #edf2f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #c53030;
+        }
+        .note {
+            font-size: 13px;
+            color: #718096;
+            margin-top: 6px;
+        }
+        .language-divider {
+            text-align: center;
+            margin: 50px 0;
+            font-size: 20px;
+            color: #a0aec0;
+            letter-spacing: 4px;
+        }
+        a {
+            color: #3182ce;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            margin-top: 60px;
+            font-size: 13px;
+            color: #a0aec0;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ======================================================== -->
+    <!-- 日本語セクション                                         -->
+    <!-- ======================================================== -->
+    <div class="section-block">
+        <div class="meta-info">
+            <strong>公開日:</strong> 2026年8月1日<br>
+            <strong>発行:</strong> Sleep Boy Project
+        </div>
+
+        <h1>【参考】Sleep Boy ULTRA IoT 設定事例</h1>
+
+        <div class="warning-block">
+            ⚠️ 本ドキュメントはSleep BoyのULTRA（IoT機能）の
+            一つの設定例を、参考までに記載するものです。<br><br>
+            告知の通り、本ドキュメントに関するサポート・設定に関する
+            ご質問は受け付けておりません。本機能は上級者向けです。
+            設定内容にご了承いただける方のみご利用ください。
+        </div>
+
+        <h2 class="bullet-title">■ 接続機器</h2>
+        <div class="device-block">
+            SwitchBot ハブミニ<br>
+            あらかじめ赤外線リモコンでライトのOFFを記憶させておく。<br>
+            動作の名前は何でもよい。
+        </div>
+
+        <h2 class="bullet-title">■ 設定方法</h2>
+
+        <p><strong>1. IFTTT (Webhooks)</strong></p>
+        <p>IFTTTページにて以下のアプレットを作成。</p>
+        <ul>
+            <li>IF: 「Receive a web request (Pro)」</li>
+            <li>Then: 「Turn off appliance with Hub Plus IR remote」(SwitchBot)</li>
+        </ul>
+        <p class="note">
+            ※現在、IFTTT側でWebhooks（Receive a web request）を利用するには、
+            有料プラン（IFTTT Pro等）の契約が必要です。
+        </p>
+
+        <p>作成後、SwitchBotアプリ設定画面の「サードパーティーサービス」で
+        IFTTTとのリンク（相互連携）を設定しておきます。</p>
+
+        <p>作成完了後、画面下部の「Your webhook URL」に表示されるURLを、
+        Sleep Boyの <code>[1] IFTTT WEBHOOK URL</code> に入力し、OKをクリック。</p>
+
+        <p><code>[test]</code> をクリックし、対象の機器が消灯すれば成功です。</p>
+
+        <p><strong>2. SwitchBot API</strong></p>
+        <p>SwitchBotアプリで開発者オプションを有効にし、</p>
+        <ul>
+            <li>トークン</li>
+            <li>クライアントシークレット</li>
+        </ul>
+        <p>を取得して、それぞれSleep Boyの該当項目に入力。</p>
+
+        <p>その状態で <code>[get devices]</code> をタップすると、
+        自動的にデバイスIDが入力されます。</p>
+        <p class="note">
+            ※複数存在する場合は一番上のIDが入るため、
+            対象が違う場合は該当するIDを手入力してください。
+        </p>
+
+        <ul>
+            <li><strong>command:</strong> この事例（赤外線ライトOFF）の場合は
+                <code>turnOff</code> を入力（※大文字小文字・スペースなしに注意）</li>
+            <li><strong>commandType:</strong> 空白でOK（デフォルトの command になります）</li>
+        </ul>
+
+        <p>OKをクリックして保存。</p>
+        <p><code>[test]</code> をクリックし、対象が消灯してレスポンス
+        （<code>statusCode: 100</code>）が出れば成功です。</p>
+
+        <h2 class="bullet-title">■ 利用方法</h2>
+        <p><code>[test]</code> でエラーがなければ、設定されている情報に基づき、
+        タイマー切れまたは睡眠検知となった瞬間に、1および2のシステム
+        （入力されているもの）をトリガーしにいきます。</p>
+    </div>
+
+    <div class="language-divider">━━━━━━━━━━━━━━</div>
+
+    <!-- ======================================================== -->
+    <!-- English Section                                          -->
+    <!-- ======================================================== -->
+    <div class="section-block">
+        <div class="meta-info">
+            <strong>Published:</strong> August 1, 2026<br>
+            <strong>Publisher:</strong> Sleep Boy Project
+        </div>
+
+        <h1>[Reference] Sleep Boy ULTRA IoT Setup Example</h1>
+
+        <div class="warning-block">
+            ⚠️ This document describes one example configuration
+            for Sleep Boy's ULTRA (IoT) feature, provided for
+            reference purposes only.<br><br>
+            As previously announced, we do not provide support
+            for questions related to this document or its setup.
+            This feature is intended for advanced users only.
+            Please use it only if you are comfortable with
+            the configuration involved.
+        </div>
+
+        <h2 class="bullet-title">■ Connected Device</h2>
+        <div class="device-block">
+            SwitchBot Hub Mini<br>
+            Pre-record the "light OFF" command using the
+            IR remote learning feature beforehand.<br>
+            The action name can be anything you like.
+        </div>
+
+        <h2 class="bullet-title">■ Setup Instructions</h2>
+
+        <p><strong>1. IFTTT (Webhooks)</strong></p>
+        <p>Create the following applet on the IFTTT website.</p>
+        <ul>
+            <li>IF: "Receive a web request (Pro)"</li>
+            <li>Then: "Turn off appliance with Hub Plus IR remote" (SwitchBot)</li>
+        </ul>
+        <p class="note">
+            * As of now, using Webhooks (Receive a web request) on IFTTT
+            requires a paid plan (such as IFTTT Pro).
+        </p>
+
+        <p>After creating the applet, go to the SwitchBot app's settings
+        screen and link it with IFTTT under "Third-Party Services."</p>
+
+        <p>Once set up, copy the URL shown under "Your webhook URL"
+        at the bottom of the page, and paste it into
+        <code>[1] IFTTT WEBHOOK URL</code> in Sleep Boy, then tap OK.</p>
+
+        <p>Tap <code>[test]</code> — if the target device turns off,
+        the setup was successful.</p>
+
+        <p><strong>2. SwitchBot API</strong></p>
+        <p>Enable Developer Options in the SwitchBot app, and obtain:</p>
+        <ul>
+            <li>Token</li>
+            <li>Client Secret</li>
+        </ul>
+        <p>Enter each value into the corresponding field in Sleep Boy.</p>
+
+        <p>With these entered, tap <code>[get devices]</code> —
+        the Device ID will be filled in automatically.</p>
+        <p class="note">
+            * If multiple devices exist, the topmost ID will be used.
+            If this isn't the correct device, enter the appropriate
+            ID manually.
+        </p>
+
+        <ul>
+            <li><strong>command:</strong> For this example (IR light OFF),
+                enter <code>turnOff</code> (note: case-sensitive,
+                no spaces)</li>
+            <li><strong>commandType:</strong> Leave blank
+                (defaults to "command")</li>
+        </ul>
+
+        <p>Tap OK to save.</p>
+        <p>Tap <code>[test]</code> — if the target device turns off
+        and the response returns <code>statusCode: 100</code>,
+        the setup was successful.</p>
+
+        <h2 class="bullet-title">■ How It Works</h2>
+        <p>If <code>[test]</code> completes without errors, the configured
+        systems (1 and 2, whichever are set) will automatically trigger
+        the moment your timer expires or sleep is detected.</p>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 Sleep Boy Project. All Rights Reserved.</p>
+    </div>
+    <p style="text-align:center;"><a href="index.html">TOPへ / Back to TOP</a></p>
+
+</body>
+</html>
