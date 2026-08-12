@@ -132,6 +132,48 @@
             ご質問は受け付けておりません。本機能は上級者向けです。
             設定内容にご了承いただける方のみご利用ください。
         </div>
+        
+        <!-- ============================================================
+  【追加セクション】コンフィグ画面の説明（日本語）
+  挿入場所: 日本語セクションの「■ 目的及び接続機器設定」の直前
+  画像ファイル: iot_config_screen.png を同じ階層にアップロードしてください
+============================================================ -->
+
+<h2 class="bullet-title">■ コンフィグ画面の見方</h2>
+
+<p>ULTRAプラン加入後、アプリ内の <code>[IoT]</code> ボタンから
+以下の設定画面（iot-link: configuration）を開けます。</p>
+
+<div style="text-align:center; margin: 20px 0;">
+    <img src="iot_config_screen.png"
+         alt="Sleep Boy IoT設定画面"
+         style="max-width: 320px; width: 100%; border: 2px solid #2d3748; border-radius: 8px;">
+</div>
+
+<div class="device-block">
+    <p style="margin-bottom: 8px;"><strong>[1] IFTTT WEBHOOK URL</strong><br>
+    IFTTTで作成したWebhook URLを貼り付ける欄です。
+    <code>paste</code> でクリップボードから直接貼り付けできます。
+    入力後 <code>ok</code> で保存、<code>clear</code> で消去します。</p>
+
+    <p style="margin-bottom: 8px;"><strong>[2] SWITCHBOT API</strong><br>
+    SwitchBotの開発者オプションで取得した
+    <code>token</code>（トークン）と <code>secret</code>（クライアントシークレット）を入力します。<br>
+    <code>get devices</code> をタップすると <code>deviceId</code> が自動入力されます。<br>
+    <code>command</code> には実行したい命令（例: <code>turnOff</code>）、
+    <code>commandType</code> は通常空白のままでOKです。</p>
+
+    <p style="margin-bottom: 8px;"><strong>[status]</strong><br>
+    現在の接続状態が表示されます（standby = 待機中）。</p>
+
+    <p style="margin-bottom: 0;"><strong>[ test ] / [ cancel ]</strong><br>
+    <code>[test]</code> で設定内容を即時実行してテストできます。
+    対象の機器が反応すれば設定成功です。
+    <code>[cancel]</code> で画面を閉じます。</p>
+</div>
+
+<p class="note">※ [1]・[2] はどちらか一方のみの設定でも動作します。
+入力されている方だけがトリガーされます。</p>
 
         <h2 class="bullet-title">■ 目的及び接続機器設定</h2>
         <div class="device-block">
@@ -210,6 +252,48 @@
             As previously announced, we do not offer support for questions regarding this document or its setup. This feature is intended for advanced users only — please proceed at your own risk.
         </div>
 
+        <!-- ============================================================
+  [Additional Section] Configuration Screen Guide (English)
+  Insert before "■ Purpose & Device Setup" in the English section
+============================================================ -->
+
+<h2 class="bullet-title">■ Understanding the Configuration Screen</h2>
+
+<p>After subscribing to the ULTRA plan, tap the <code>[IoT]</code> button
+in the app to open the configuration screen (iot-link: configuration)
+shown below.</p>
+
+<div style="text-align:center; margin: 20px 0;">
+    <img src="iot_config_screen.png"
+         alt="Sleep Boy IoT Configuration Screen"
+         style="max-width: 320px; width: 100%; border: 2px solid #2d3748; border-radius: 8px;">
+</div>
+
+<div class="device-block">
+    <p style="margin-bottom: 8px;"><strong>[1] IFTTT WEBHOOK URL</strong><br>
+    Paste the Webhook URL you created on IFTTT here.
+    Use <code>paste</code> to insert directly from your clipboard.
+    Tap <code>ok</code> to save, or <code>clear</code> to erase.</p>
+
+    <p style="margin-bottom: 8px;"><strong>[2] SWITCHBOT API</strong><br>
+    Enter the <code>token</code> and <code>secret</code> (Client Secret)
+    obtained from SwitchBot's Developer Options.<br>
+    Tap <code>get devices</code> to auto-fill the <code>deviceId</code>.<br>
+    For <code>command</code>, enter the action to execute
+    (e.g. <code>turnOff</code>). Leave <code>commandType</code> blank
+    in most cases.</p>
+
+    <p style="margin-bottom: 8px;"><strong>[status]</strong><br>
+    Shows the current connection state (standby = idle).</p>
+
+    <p style="margin-bottom: 0;"><strong>[ test ] / [ cancel ]</strong><br>
+    Tap <code>[test]</code> to execute your settings immediately.
+    If the target device responds, your setup is working.
+    Tap <code>[cancel]</code> to close the screen.</p>
+</div>
+
+<p class="note">* You may configure only [1] or only [2] — whichever
+is filled in will be triggered.</p>
         <h2 class="bullet-title">■ Purpose & Device Setup</h2>
         <div class="device-block">
             Setting up SwitchBot Hub Mini to turn off an infrared ceiling light<br>
