@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <title>GAME MODE について - Sleep Boy Project</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            max-width: 750px;
+            margin: 40px auto;
+            padding: 0 20px;
+            color: #2d3748;
+            line-height: 1.7;
+            background-color: #fafafa;
+        }
+        .meta-info {
+            font-size: 14px;
+            color: #718096;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        .lang-note {
+            font-size: 13px;
+            color: #718096;
+            text-align: right;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        h1 {
+            font-size: 26px;
+            border-bottom: 2px solid #2d3748;
+            padding-bottom: 12px;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            color: #1a202c;
+        }
+        h2 {
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            color: #1a202c;
+        }
+        .section-block {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            border: 1px solid #e2e8f0;
+        }
+        .draft-block {
+            background-color: #fff8e1;
+            border: 1px solid #f6c94e;
+            border-left: 4px solid #f6ad1e;
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: #744210;
+        }
+        .bullet-title {
+            font-weight: bold;
+            margin-top: 20px;
+            color: #2d3748;
+            border-left: 3px solid #4a5568;
+            padding-left: 8px;
+        }
+        .device-block {
+            background-color: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .log-sample {
+            background-color: #0d1b0d;
+            color: #8bac0f;
+            font-family: "Courier New", monospace;
+            padding: 16px 18px;
+            border-radius: 6px;
+            font-size: 13px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            margin: 14px 0;
+        }
+        p, li {
+            font-size: 15px;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+        ol li, ul li {
+            margin-bottom: 10px;
+        }
+        code {
+            background-color: #edf2f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #c53030;
+        }
+        .note {
+            font-size: 13px;
+            color: #718096;
+            margin-top: 6px;
+        }
+        .language-divider {
+            text-align: center;
+            margin: 50px 0;
+            font-size: 20px;
+            color: #a0aec0;
+            letter-spacing: 4px;
+        }
+        a {
+            color: #3182ce;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            margin-top: 60px;
+            font-size: 13px;
+            color: #a0aec0;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- 日本語セクション                                         -->
+    <!-- ======================================================== -->
+    <div class="section-block">
+        <p class="lang-note">English version below.</p>
+
+        <div class="meta-info">
+            <strong>公開日:</strong> 2026年8月23日<br>
+            <strong>発行:</strong> Sleep Boy Project
+        </div>
+
+        <h1>GAME MODE について</h1>
+
+        <p>『SleepBoy』には、通常の防衛ユーティリティ機能に加えて、
+        <strong>GAME MODE</strong>という追加モードが搭載されています。
+        本ページでは、GAME MODEが何をするものなのか、その仕組みを
+        ご案内します。</p>
+
+        <h2 class="bullet-title">■ GAME MODEとは</h2>
+        <p>あなたの毎晩の睡眠の記録が、そのまま「迎撃ログ」として
+        記録されるモードです。睡眠の質が良いほど、SleepBoyは
+        強い一撃を放ちます。装備画面の <code>mode表示長押し</code> から
+        いつでもON／OFFを切り替えられます。</p>
+
+        <div class="device-block">
+            <strong>NORMAL MODE</strong>（通常）<br>
+            これまで通り、静かにあなたのスマホと部屋を防衛します。<br><br>
+            <strong>GAME MODE</strong>（追加）<br>
+            同じ防衛機能はそのままに、睡眠の記録をゲームとして
+            楽しめるようになります。データの取得方法・防衛の仕組み
+            自体は一切変わりません。<br><br>
+            普段Dr.NやBoyたちがどのような戦いを繰り広げているのか、
+            ぜひあなたの目で確認してください。
+        </div>
+
+        <h2 class="bullet-title">■ PRIORITY TARGET（討伐対象）</h2>
+        <p>GAME MODEを開始すると、最大15日間の「作戦」がスタートします。
+        この期間、SleepBoyはある脅威（PRIORITY TARGET）と対峙することになります。</p>
+
+        <div class="log-sample">[system] briefing: threat-analysis
+─────────────────────────
+PRIORITY TARGET
+ゴースト・タブ・マザー
+[■■□□□] 中破
+
+弱点属性: LITE
+─────────────────────────
+Dr.N: 「奴は"閉じる"という行為そのものを拒絶している。
+       だが光を当てれば、化けの皮が剥がれる。」</div>
+
+        <p>作戦開始から数日は、相手の正体は伏せられています。
+        睡眠を重ねるうちに解析が進み、正体と弱点属性が明らかになります。</p>
+
+        <h2 class="bullet-title">■ 4つの属性とモードの対応</h2>
+        <p>その夜どの防衛モードを使ったかによって、SleepBoyの攻撃属性が決まります。
+        相手の弱点属性と一致すると、大ダメージを与えられます。</p>
+
+        <div class="device-block">
+            NORMALモード（動き検知） → <strong>TIMER属性</strong><br>
+            L-SENSモード（光検知） → <strong>LITE属性</strong><br>
+            TRACKモード（音・静寂検知） → <strong>TRACK属性</strong>
+        </div>
+
+        <p class="note">※ ULTRAプランはこれに加えて、毎晩自動でIOT属性の「追撃」が発動します
+        （選ぶものではなく、契約しているだけで毎晩追加の一撃になります）。</p>
+
+        <h2 class="bullet-title">■ 迷走プロセス</h2>
+        <p>PRIORITY TARGETとの対峙とは別に、毎晩ちょっとした
+        「迷走プロセス」との遭遇があります。通知の数字が増殖する
+        スライムや、次の動画を勝手に流し始める厄介者など、
+        日常に潜む小さな敵たちです。掃討すると経験値が手に入りますが、
+        相手によっては返り討ちに遭い、SLEEP BOYが少し傷つくこともあります。</p>
+
+        <h2 class="bullet-title">■ SLEEP BOY自身の状態</h2>
+        <p>PRIORITY TARGETにはHP（体力）がありますが、実はSleepBoy自身にも
+        「SLEEP BOY」という体力ゲージがあります。睡眠の質が悪い夜が
+        続くと、この体力がすり減っていきます。</p>
+
+        <div class="log-sample">SLEEP BOY
+[■■■■□] 小破</div>
+
+        <p>もしSleepBoyの体力が尽きてしまった場合、サポートメカ「Cell」が
+        とっさにSleepBoyの頭脳（コア）だけを抱えて撤退します。
+        コアさえ無事であれば、また次の作戦に挑めます。</p>
+
+        <h2 class="bullet-title">■ 作戦の終わり方</h2>
+        <p>15日間の作戦には、3つの終わり方があります。</p>
+
+        <ol>
+            <li><strong>討伐成功</strong>：PRIORITY TARGETを倒すと作戦完了です
+                （15日より早くともその作戦は完了します）。
+                無料プランの場合は同じ装備で引き続き、有料プランの場合には
+                新しい装備（キャラクターの姿）に変更され、次の作戦に向かいます。</li>
+            <li><strong>エネルギー切れ</strong>：15日以内に倒しきれなかった場合、
+                機体のエネルギー限界により作戦は中断されます。</li>
+            <li><strong>SLEEP BOYの限界</strong>：睡眠の質が悪い夜が続くと、
+                エネルギーが残っていても先に力尽きてしまうことがあります。</li>
+        </ol>
+
+        <p class="note">※ どの終わり方でも、次の作戦への移行は保証されています。
+        安心してご利用ください。</p>
+
+        <h2 class="bullet-title">■ レベルアップ</h2>
+        <p>PRIORITY TARGETを討伐するたびに、SleepBoyはレベルアップします。
+        STR（攻撃力）・DEF（防御力）・AGI（素早さ）のいずれかが、
+        ランダムで1つ強化されます。何が伸びるかは、そのときのお楽しみです。</p>
+
+        <h2 class="bullet-title">■ 有料プランとの関係</h2>
+        <p>GAME MODEはどなたでも利用できますが、選べる防衛モード
+        （＝使用できる攻撃属性）は、ご利用中のプランによって異なります。
+        上位プランほど、より強力で、多くの属性を使いこなせるようになります。</p>
+
+        <p class="note">※ GAME MODEは睡眠検知・防衛機能そのものには一切影響しません。
+        ONにしてもOFFにしても、SleepBoyの防衛性能は変わりません。</p>
+    </div>
+
+    <div class="language-divider">━━━━━━━━━━━━━━</div>
+
+    <!-- ======================================================== -->
+    <!-- English Section                                          -->
+    <!-- ======================================================== -->
+    <div class="section-block">
+        <div class="meta-info">
+            <strong>Published:</strong> August 23, 2026<br>
+            <strong>Publisher:</strong> Sleep Boy Project
+        </div>
+
+        <h1>About GAME MODE</h1>
+
+        <p>In addition to its standard defense utility, SleepBoy includes
+        an optional <strong>GAME MODE</strong>. This page explains what
+        GAME MODE does and how it works.</p>
+
+        <h2 class="bullet-title">■ What is GAME MODE?</h2>
+        <p>Your nightly sleep record becomes a "combat log" each morning.
+        The better your sleep quality, the stronger SleepBoy's strikes.
+        Toggle GAME MODE on or off anytime via the mode-display long-press menu.</p>
+
+        <div class="device-block">
+            <strong>NORMAL MODE</strong> (default)<br>
+            SleepBoy quietly defends your phone and room, as always.<br><br>
+            <strong>GAME MODE</strong> (optional)<br>
+            The same defense functionality remains unchanged — your
+            sleep record is simply presented as a game on top of it.<br><br>
+            See for yourself what kind of battles Dr. N and Boy are
+            fighting behind the scenes, every single night.
+        </div>
+
+        <h2 class="bullet-title">■ PRIORITY TARGET</h2>
+        <p>Starting GAME MODE begins a "mission" lasting up to 15 days.
+        During this period, SleepBoy faces off against a threat
+        (the PRIORITY TARGET).</p>
+
+        <div class="log-sample">[system] briefing: threat-analysis
+─────────────────────────
+PRIORITY TARGET
+Ghost Tab Mother
+[■■□□□] damaged
+
+Weakness: LITE
+─────────────────────────
+Dr. N: "It refuses the very act of 'closing.'
+        Pathetic. But shine a light on it,
+        and the mask comes off."</div>
+
+        <p>For the first few days, the target's identity remains hidden.
+        As your sleep record accumulates, analysis progresses, revealing
+        both its identity and weakness attribute.</p>
+
+        <h2 class="bullet-title">■ 4 Attributes, Linked to Detection Modes</h2>
+        <p>Whichever defense mode you use each night determines
+        SleepBoy's attack attribute for that night. Matching your
+        target's weakness deals significantly more damage.</p>
+
+        <div class="device-block">
+            NORMAL mode (motion detection) → <strong>TIMER attribute</strong><br>
+            L-SENS mode (light detection) → <strong>LITE attribute</strong><br>
+            TRACK mode (sound/silence detection) → <strong>TRACK attribute</strong>
+        </div>
+
+        <p class="note">* On the ULTRA plan, every night also triggers an automatic
+        IOT-attribute "follow-up strike" on top of the above — not something you
+        select, just an extra hit every night simply by being on ULTRA.</p>
+
+        <h2 class="bullet-title">■ Stray Processes</h2>
+        <p>Separate from your PRIORITY TARGET encounter, each night
+        brings a small skirmish with "stray processes" — minor nuisances
+        lurking in daily digital life, from badge-count slimes to
+        autoplay daemons. Defeating them grants experience points,
+        though some can strike back and leave SleepBoy slightly worse for wear.</p>
+
+        <h2 class="bullet-title">■ SleepBoy's Own Condition</h2>
+        <p>While the PRIORITY TARGET has its own HP, SleepBoy itself
+        also has a "SLEEP BOY" health gauge. A run of poor-quality
+        sleep will gradually wear it down.</p>
+
+        <div class="log-sample">SLEEP BOY
+[■■■■□] damaged</div>
+
+        <p>Should SleepBoy's condition hit its limit, its support unit
+        "Cell" swoops in and carries the core (clock-work-logic) to
+        safety. As long as the core survives, the next mission can begin.</p>
+
+        <h2 class="bullet-title">■ How a Mission Ends</h2>
+        <p>A 15-day mission can conclude in three ways:</p>
+
+        <ol>
+            <li><strong>Target defeated:</strong> The mission is complete
+                the moment the target falls — even before day 15.
+                On the FREE plan, SleepBoy continues in its current form;
+                on paid plans, SleepBoy is issued new equipment
+                (a new character form) and moves on to the next mission.</li>
+            <li><strong>Energy depleted:</strong> If the target isn't
+                defeated within 15 days, the mission ends due to the
+                unit's energy limit.</li>
+            <li><strong>SleepBoy's limit reached:</strong> A run of poor
+                sleep can cause SleepBoy to reach its limit before the
+                energy timer does.</li>
+        </ol>
+
+        <p class="note">* Regardless of how a mission ends, moving on to
+        the next mission is always guaranteed.</p>
+
+        <h2 class="bullet-title">■ Leveling Up</h2>
+        <p>Each time a PRIORITY TARGET is defeated, SleepBoy levels up.
+        One of STR (attack), DEF (defense), or AGI (agility) is randomly
+        boosted by 1. Which stat grows is always a surprise.</p>
+
+        <h2 class="bullet-title">■ Relationship to Paid Plans</h2>
+        <p>GAME MODE is available to everyone, but the defense modes
+        (and therefore attack attributes) available to you depend on
+        your current plan. Higher-tier plans unlock greater strength,
+        along with more attributes to work with.</p>
+
+        <p class="note">* GAME MODE has no effect on sleep detection or
+        defense performance. Whether it's on or off, SleepBoy's core
+        protection remains exactly the same.</p>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 Sleep Boy Project. All Rights Reserved.</p>
+    </div>
+    <p style="text-align:center;"><a href="index.html">TOPへ / Back to TOP</a></p>
+
+</body>
+</html>
